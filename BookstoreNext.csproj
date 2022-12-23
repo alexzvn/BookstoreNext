@@ -16,4 +16,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Views\Book\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Book\" />
+  </ItemGroup>
 </Project>

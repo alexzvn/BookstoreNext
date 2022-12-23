@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BookModel>
+
+@{
+  ViewData["Title"] = "Book Manager";
+}
+
+
+<h2>
+  Book manager
+  <a asp-action="Create" class="btn btn-small btn-primary" role="button">Add new</a>
+</h2>
+
+
+<div>
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+
+    @foreach (var book in Model)
+    {
+      <tr>
+        <td>@book.Id</td>
+        <td>@book.Name</td>
+        <td>@book.Description</td>
+        <td><img src="@book.Image" width="100" /></td>
+        <td>
+          <a class="btn btn-primary" asp-action="Edit" asp-route-id="@book.Id">Edit</a> |
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@book.Id">Delete</a>
+        </td>
+      </tr>
+    }
+  </table>
+
+</div>
