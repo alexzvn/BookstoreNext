@@ -15,7 +15,7 @@ namespace BookstoreNext.Models
         [StringLength(1000)]
         public string Description { get; set; } = "";
 
-        [StringLength(100)]
+        [StringLength(255)]
         [Display(Name = "Image URL")]
         public string Image { get; set; } = "";
 
