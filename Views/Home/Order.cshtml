@@ -1,0 +1,12 @@
+@model OrderModel
+
+@{
+  Layout = "~/Pages/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Order Completed";
+}
+
+
+<center class="mt-5">
+    <h1>Thank you for your order #@Model.Id</h1>
+    <p>Your book <strong>@Model.Book.Name</strong> will delivery shorly</p>
+</center>
