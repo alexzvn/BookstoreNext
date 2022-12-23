@@ -1,0 +1,33 @@
+@model BookModel
+
+@{
+  Layout = "~/Pages/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Book " + Model.Name;
+}
+
+
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4">
+    <img class="w-100" src="@Model.Image" alt="">
+  </div>
+
+  <div class="col-md-4">
+    <h2>@Model.Name</h2>
+    <p class="text-muted">Author: Someone Else</p>
+    <p class="text-muted">Year: 2022</p>
+    <p class="text-muted">ibsn: 16699420</p>
+    <p class="text-muted"></p>
+    <p>@Model.Description</p>
+    <p><strong>Price: $@Model.Price</strong></p>
+
+    @using (@Html.BeginForm("Checkout", "Home", FormMethod.Get, new { @class = "d-flex" }))
+    {
+      @Html.HiddenFor(model => model.Id)
+      <div class="d-flex" style="align-items: center;">
+        <label for="Quantity" class="control-label">Quantity: </label>
+        <input class="form-control mx-2" style="width: 70px;" type="number" name="Quantity" min="1" max="100" step="1" value="1">
+      </div>
+      <button type="submit" class="btn btn-danger">Buy Now</button>
+    }
+  </div>
+</div>
